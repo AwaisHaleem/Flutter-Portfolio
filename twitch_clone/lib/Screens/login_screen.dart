@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitch_clone/Recources/auth_methods.dart';
+import 'package:twitch_clone/Responsive/responsive.dart';
 import 'package:twitch_clone/Screens/home_screen.dart';
 import 'package:twitch_clone/Widgets/custom_button.dart';
 import 'package:twitch_clone/Widgets/custom_textfield.dart';
@@ -45,42 +46,45 @@ class _LogInState extends State<LogIn> {
       appBar: AppBar(
         title: const Text("LogIn"),
       ),
-      body: _isLoading? const LoadingIndicator() : SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: size.height * 0.1,
-              ),
-              const Text(
-                "Email",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextField(controller: _emailController),
-              const SizedBox(
-                height: 20,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "Password",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextField(controller: _passwordController),
-              const SizedBox(
-                height: 30,
-              ),
-              CustomButton(title: "LogIn", onTap: logInUser)
-            ],
+      body: _isLoading? const LoadingIndicator() : 
+      Responsive(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: size.height * 0.1,
+                ),
+                const Text(
+                  "Email",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextField(controller: _emailController),
+                const SizedBox(
+                  height: 20,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "Password",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextField(controller: _passwordController),
+                const SizedBox(
+                  height: 30,
+                ),
+                CustomButton(title: "LogIn", onTap: logInUser)
+              ],
+            ),
           ),
         ),
       ),
