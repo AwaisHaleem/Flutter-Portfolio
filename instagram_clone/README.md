@@ -5,4 +5,4 @@
 ## Features
 
 -**Authentication**
-![](/assets/logo.svg)
+!(assets/logo.svg)
